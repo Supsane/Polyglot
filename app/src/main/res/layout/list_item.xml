@@ -4,14 +4,49 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/nameLesson"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/example_lesson_padding_start"
+        android:paddingEnd="@dimen/example_lesson_padding_end">
 
-    <TextView
-        android:id="@+id/descriptionLesson"
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_example_lesson_24dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/example_lesson_name_desc_end"
+                android:paddingStart="@dimen/example_lesson_name_desc_start"
+                android:paddingTop="@dimen/example_lesson_top_padding"
+                android:textSize="@dimen/name_lesson_size"/>
+
+            <TextView
+                android:id="@+id/descriptionLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/example_lesson_top_padding"
+                android:paddingEnd="@dimen/example_lesson_name_desc_end"
+                android:paddingStart="@dimen/example_lesson_name_desc_start"
+                android:textSize="@dimen/desc_lesson_size"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"/>
 
 </LinearLayout>
