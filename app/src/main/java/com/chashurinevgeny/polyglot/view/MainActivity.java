@@ -3,6 +3,8 @@ package com.chashurinevgeny.polyglot.view;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,15 +17,18 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.chashurinevgeny.polyglot.R;
+import com.chashurinevgeny.polyglot.model.Lessons;
 import com.chashurinevgeny.polyglot.model.ModelImpl;
 import com.chashurinevgeny.polyglot.model.ModelInterface;
 import com.chashurinevgeny.polyglot.presenter.PresenterImpl;
 import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ViewInterface {
+import java.util.List;
 
-    private TextView infoText;
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ViewInterface {
+
+    private RecyclerAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +46,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        infoText = (TextView) findViewById(R.id.infoText);
         ModelInterface model = new ModelImpl();
         PresenterInterface presenter = new PresenterImpl(model);
         presenter.loadInformation(this);
+
+        recyclerView = (RecyclerView) findViewById(R.id.listLessons);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -104,8 +113,9 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
     @Override
-    public void displayInfo(String text) {
-        infoText.setText(text);
+    public void displayInfo(List<Lessons.LessonExample> lessonExample) {
+        adapter = new RecyclerAdapter(lessonExample);
     }
 }

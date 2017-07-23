@@ -1,5 +1,7 @@
 package com.chashurinevgeny.polyglot.view;
 
+import com.chashurinevgeny.polyglot.model.Lessons;
+
 import java.util.List;
 
 /**
@@ -7,5 +9,5 @@ import java.util.List;
  */
 
 public interface ViewInterface {
-    void displayInfo(String text);
+    void displayInfo(List<Lessons.LessonExample> lessonExample);
 }

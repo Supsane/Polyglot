@@ -7,5 +7,5 @@ import java.util.List;
  */
 
 public interface ModelInterface {
-    String retrieveInfo();
+    List<Lessons.LessonExample> retrieveInfo();
 }
