@@ -7,7 +7,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="example_lesson_top_padding">4dp</dimen>
     <dimen name="name_lesson_size">22sp</dimen>
-    <dimen name="desc_lesson_size">16sp</dimen>
+    <dimen name="desc_lesson_size">15sp</dimen>
     <dimen name="example_lesson_padding_start">16dp</dimen>
     <dimen name="example_lesson_padding_end">16dp</dimen>
     <dimen name="example_lesson_name_desc_start">16dp</dimen>
