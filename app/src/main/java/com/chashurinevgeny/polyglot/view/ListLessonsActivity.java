@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.chashurinevgeny.polyglot.R;
+import com.chashurinevgeny.polyglot.model.DetailsLesson;
 import com.chashurinevgeny.polyglot.model.Lessons;
 import com.chashurinevgeny.polyglot.model.ModelImpl;
 import com.chashurinevgeny.polyglot.model.ModelInterface;
@@ -21,9 +22,9 @@ import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ViewInterface {
+public class ListLessonsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ViewInterface {
 
-    private RecyclerAdapter adapter;
+    private ListLessonsRecyclerAdapter adapter;
     private RecyclerView recyclerView;
 
     @Override
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         ModelInterface model = new ModelImpl();
         PresenterInterface presenter = new PresenterImpl(model);
-        presenter.loadInformation(this);
+        presenter.loadListLessons(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.listLessons);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -111,7 +112,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public void displayInfo(List<Lessons.LessonExample> lessonExample) {
-        adapter = new RecyclerAdapter(lessonExample);
+    public void displayListLessons(List<Lessons.LessonExample> lessonExample) {
+        adapter = new ListLessonsRecyclerAdapter(lessonExample);
+    }
+
+    @Override
+    public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
+
     }
 }

@@ -8,8 +8,15 @@ import java.util.List;
 
 public class ModelImpl implements ModelInterface {
     @Override
-    public List<Lessons.LessonExample> retrieveInfo() {
+    public List<Lessons.LessonExample> retrieveListLessons() {
 
         return Lessons.getLessonExample();
+    }
+
+    @Override
+    public List<DetailsLesson.DetailsLessonsExample> retrieveDetailsLesson(int idLesson) {
+        DetailsLesson detailsLesson = new DetailsLesson();
+
+        return detailsLesson.getDetailsLessonsExampleList(idLesson);
     }
 }

@@ -7,5 +7,6 @@ import java.util.List;
  */
 
 public interface ModelInterface {
-    List<Lessons.LessonExample> retrieveInfo();
+    List<Lessons.LessonExample> retrieveListLessons();
+    List<DetailsLesson.DetailsLessonsExample> retrieveDetailsLesson(int idLesson);
 }

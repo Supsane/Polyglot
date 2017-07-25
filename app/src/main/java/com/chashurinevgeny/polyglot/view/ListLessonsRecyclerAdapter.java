@@ -15,17 +15,17 @@ import java.util.List;
  * Created by Chashurin Evgeny on 23.07.2017.
  */
 
-class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.LessonHolder> {
+class ListLessonsRecyclerAdapter extends RecyclerView.Adapter<ListLessonsRecyclerAdapter.LessonHolder> {
 
     private final List<Lessons.LessonExample> lessonExample;
 
-    RecyclerAdapter(List<Lessons.LessonExample> lessonExample) {
+    ListLessonsRecyclerAdapter(List<Lessons.LessonExample> lessonExample) {
         this.lessonExample = lessonExample;
     }
 
     @Override
     public LessonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_lesson, parent, false);
         return new LessonHolder(view);
     }
 

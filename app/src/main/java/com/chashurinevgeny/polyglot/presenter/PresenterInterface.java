@@ -7,5 +7,6 @@ import com.chashurinevgeny.polyglot.view.ViewInterface;
  */
 
 public interface PresenterInterface {
-    void loadInformation (ViewInterface viewInterface);
+    void loadListLessons(ViewInterface viewInterface);
+    void loadDetailsLesson(ViewInterface viewInterface, int idLesson);
 }

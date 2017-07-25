@@ -31,7 +31,7 @@ public class Lessons {
     }
 
     private Lessons() {
-        lessonExample = new ArrayList<>(16);
+        lessonExample = new ArrayList<>();
         lessonExample.add(new LessonExample("Урок №1", "Базовая таблица глагола. Утверждения, отрицания, вопросы. Личные местоимения"));
         lessonExample.add(new LessonExample("Урок №2", "Как знать тысячи слов. Местоимения, вопросительные слова, предлоги to, in, from"));
         lessonExample.add(new LessonExample("Урок №3", "Глагол to be. Действия в процессе. Притяжательные местоимения"));
