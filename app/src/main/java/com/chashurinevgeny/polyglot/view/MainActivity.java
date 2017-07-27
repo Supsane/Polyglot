@@ -22,10 +22,7 @@ import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
 
 import java.util.List;
 
-public class ListLessonsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ViewInterface {
-
-    private ListLessonsRecyclerAdapter adapter;
-    private RecyclerView recyclerView;
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +40,6 @@ public class ListLessonsActivity extends AppCompatActivity implements Navigation
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ModelInterface model = new ModelImpl();
-        PresenterInterface presenter = new PresenterImpl(model);
-        presenter.loadListLessons(this);
-
-        recyclerView = (RecyclerView) findViewById(R.id.listLessons);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -110,14 +99,4 @@ public class ListLessonsActivity extends AppCompatActivity implements Navigation
         return true;
     }
 
-
-    @Override
-    public void displayListLessons(List<Lessons.LessonExample> lessonExample) {
-        adapter = new ListLessonsRecyclerAdapter(lessonExample);
-    }
-
-    @Override
-    public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
-
-    }
 }

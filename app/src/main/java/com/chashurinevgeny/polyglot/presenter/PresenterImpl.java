@@ -22,6 +22,6 @@ public class PresenterImpl implements PresenterInterface {
 
     @Override
     public void loadDetailsLesson(ViewInterface viewInterface, int idLesson) {
-
+        viewInterface.displayDetailsLesson(model.retrieveDetailsLesson(idLesson));
     }
 }

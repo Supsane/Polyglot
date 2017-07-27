@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.chashurinevgeny.polyglot.view.ListLessonsActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:context="com.chashurinevgeny.polyglot.view.MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:baselineAligned="false">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/listLessons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"/>
+    <fragment
+        android:id="@+id/listLessonsFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        class="com.chashurinevgeny.polyglot.view.ListLessonsFragment"/>
 
-</android.support.constraint.ConstraintLayout>
+    <fragment
+        android:id="@+id/listDetailsLessonFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        class="com.chashurinevgeny.polyglot.view.DetailsLessonFragment"/>
+
+</LinearLayout>
