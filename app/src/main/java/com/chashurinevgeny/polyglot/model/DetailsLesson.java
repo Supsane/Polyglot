@@ -16,7 +16,7 @@ public class DetailsLesson {
         private String nameDetails;
         private String descriptionDetails;
 
-        public DetailsLessonsExample(String nameDetails, String descriptionDetails) {
+        DetailsLessonsExample(String nameDetails, String descriptionDetails) {
             this.nameDetails = nameDetails;
             this.descriptionDetails = descriptionDetails;
         }
@@ -51,6 +51,18 @@ public class DetailsLesson {
                 detailsLessonsExampleList.add(new DetailsLessonsExample("6. Тренировка вопросов","Расширяем возможности"));
                 detailsLessonsExampleList.add(new DetailsLessonsExample("7. Предлоги","in, to, from"));
                 detailsLessonsExampleList.add(new DetailsLessonsExample("8. Слова паразиты","Тренировка предложений"));
+                return detailsLessonsExampleList;
+            }
+            case 2: {
+                detailsLessonsExampleList = new ArrayList<>();
+                detailsLessonsExampleList.add(new DetailsLessonsExample("1. Закрепление урока 1 и 2", "Отработка пройденных глаголов"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("2. Утверждения: to be","Прошедшее, настоящее, будущее"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("3. Отрицания: to be","Прошедшее, настоящее, будущее"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("4. Вопросы: to be","Прошедшее, настоящее, будущее"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("5. Процесс","Длительное время"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("6. Глагол + to","I want to/like to"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("7. Чье? -местоимения","Притяжательные местоимения"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("8. Тренировка местоимений","Притяжательные местоимения"));
                 return detailsLessonsExampleList;
             }
             default: return detailsLessonsExampleList = new ArrayList<>();
