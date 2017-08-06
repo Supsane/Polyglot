@@ -24,6 +24,7 @@ import java.util.List;
  */
 public class DetailsLessonFragment extends Fragment implements ViewInterface {
 
+    private final String IDLESSON = "idLesson";
     private DetailsLessonRecyclerAdapter adapter;
     private RecyclerView recyclerView;
     private int idLesson;
@@ -32,15 +33,12 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
         this.idLesson = idLesson;
     }
 
-    public DetailsLessonFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        if (savedInstanceState != null) {
+            idLesson = savedInstanceState.getInt(IDLESSON);
+        }
         return inflater.inflate(R.layout.fragment_details_lesson, container, false);
     }
 
@@ -68,5 +66,10 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
     @Override
     public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
         adapter = new DetailsLessonRecyclerAdapter(detailsLessonsExamples);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(IDLESSON, idLesson);
     }
 }
