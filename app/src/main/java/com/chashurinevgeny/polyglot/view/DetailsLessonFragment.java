@@ -26,6 +26,11 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
 
     private DetailsLessonRecyclerAdapter adapter;
     private RecyclerView recyclerView;
+    private int idLesson;
+
+    public void setIdLesson(int idLesson) {
+        this.idLesson = idLesson;
+    }
 
     public DetailsLessonFragment() {
         // Required empty public constructor
@@ -46,7 +51,7 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
         if (view != null) {
             ModelInterface model = new ModelImpl();
             PresenterInterface presenter = new PresenterImpl(model);
-            presenter.loadDetailsLesson(this, 0);
+            presenter.loadDetailsLesson(this, idLesson);
 
             recyclerView = (RecyclerView) view.findViewById(R.id.listDetailsLesson);
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));

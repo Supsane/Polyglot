@@ -39,7 +39,7 @@ class ListLessonsRecyclerAdapter extends RecyclerView.Adapter<ListLessonsRecycle
         return lessonExample.size();
     }
 
-    static class LessonHolder extends RecyclerView.ViewHolder {
+    class LessonHolder extends RecyclerView.ViewHolder {
 
         private TextView nameLesson;
         private TextView descriptionLesson;

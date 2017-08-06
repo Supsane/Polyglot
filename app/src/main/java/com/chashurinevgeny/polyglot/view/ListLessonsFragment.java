@@ -1,6 +1,7 @@
 package com.chashurinevgeny.polyglot.view;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListLessonsFragment extends Fragment implements ViewInterface{
+public class ListLessonsFragment extends Fragment implements ViewInterface {
 
     private ListLessonsRecyclerAdapter adapter;
     private RecyclerView recyclerView;
@@ -31,6 +32,11 @@ public class ListLessonsFragment extends Fragment implements ViewInterface{
         // Required empty public constructor
     }
 
+    interface ListLessonListener {
+        void itemClicked(int id);
+    }
+
+    private ListLessonListener listLessonListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,7 +49,7 @@ public class ListLessonsFragment extends Fragment implements ViewInterface{
     public void onStart() {
         super.onStart();
         View view = getView();
-        if(view != null) {
+        if (view != null) {
             ModelInterface model = new ModelImpl();
             PresenterInterface presenter = new PresenterImpl(model);
             presenter.loadListLessons(this);
@@ -52,7 +58,28 @@ public class ListLessonsFragment extends Fragment implements ViewInterface{
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(adapter);
+            recyclerView.addOnItemTouchListener(
+                    new RecyclerItemClickListener(view.getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            if (listLessonListener != null) {
+                                listLessonListener.itemClicked(position);
+                            }
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+
+                        }
+                    })
+            );
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listLessonListener = (ListLessonListener) context;
     }
 
     @Override

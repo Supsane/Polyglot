@@ -1,9 +1,8 @@
 package com.chashurinevgeny.polyglot.view;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,16 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.chashurinevgeny.polyglot.R;
-import com.chashurinevgeny.polyglot.model.DetailsLesson;
-import com.chashurinevgeny.polyglot.model.Lessons;
-import com.chashurinevgeny.polyglot.model.ModelImpl;
-import com.chashurinevgeny.polyglot.model.ModelInterface;
-import com.chashurinevgeny.polyglot.presenter.PresenterImpl;
-import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
 
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -99,4 +91,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    @Override
+    public void itemClicked(int id) {
+        DetailsLessonFragment detailsLessonFragment = new DetailsLessonFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        detailsLessonFragment.setIdLesson(id);
+        transaction.replace(R.id.listDetailsLessonContainer, detailsLessonFragment);
+        transaction.addToBackStack(null);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        transaction.commit();
+    }
 }
