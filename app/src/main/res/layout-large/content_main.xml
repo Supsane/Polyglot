@@ -11,12 +11,11 @@
     tools:showIn="@layout/app_bar_main"
     android:baselineAligned="false">
 
-    <fragment
-        android:id="@+id/listLessonsFragment"
+    <FrameLayout
+        android:id="@+id/listLessonsContainer"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3"
-        class="com.chashurinevgeny.polyglot.view.ListLessonsFragment"/>
+        android:layout_weight="3"/>
 
     <FrameLayout
         android:id="@+id/listDetailsLessonContainer"

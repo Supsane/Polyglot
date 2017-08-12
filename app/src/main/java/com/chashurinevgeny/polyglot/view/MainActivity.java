@@ -10,11 +10,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.chashurinevgeny.polyglot.R;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener {
+
+    private static final String IDLESSON = "idLesson";
+    private static final String CALLINFLATEFRAGMENTS = "callInflateFragments";
+    private int idLesson;
+    private boolean isCallInflateFragments = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        if (savedInstanceState != null) {
+            isCallInflateFragments = savedInstanceState.getBoolean(CALLINFLATEFRAGMENTS);
+        }
+
+        if (savedInstanceState != null && isCallInflateFragments) {
+            idLesson = savedInstanceState.getInt(IDLESSON);
+            loadFragment();
+            inflateFragments(idLesson);
+        } else {
+            loadFragment();
+        }
+    }
+
+    private void loadFragment() {
+        ListLessonsFragment listLessonsFragment = new ListLessonsFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.listLessonsContainer, listLessonsFragment);
+        transaction.addToBackStack(null);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        transaction.commit();
     }
 
     @Override
@@ -93,12 +119,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void itemClicked(int id) {
+        inflateFragments(id);
+        idLesson = id;
+    }
+
+    private void inflateFragments(int id) {
+        View listDetailsLessonContainer = findViewById(R.id.listDetailsLessonContainer);
         DetailsLessonFragment detailsLessonFragment = new DetailsLessonFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         detailsLessonFragment.setIdLesson(id);
-        transaction.replace(R.id.listDetailsLessonContainer, detailsLessonFragment);
-        transaction.addToBackStack(null);
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        transaction.commit();
+        if (listDetailsLessonContainer != null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.listDetailsLessonContainer, detailsLessonFragment);
+            transaction.addToBackStack(null);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.commit();
+        } else {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.listLessonsContainer, detailsLessonFragment);
+            transaction.addToBackStack(null);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.commit();
+        }
+        isCallInflateFragments = true;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(IDLESSON, idLesson);
+        outState.putBoolean(CALLINFLATEFRAGMENTS, isCallInflateFragments);
     }
 }
