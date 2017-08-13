@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.chashurinevgeny.polyglot.R;
 import com.chashurinevgeny.polyglot.model.DetailsLesson;
@@ -26,9 +25,10 @@ import java.util.List;
 public class DetailsLessonFragment extends Fragment implements ViewInterface {
 
     private final String IDLESSON = "idLesson";
-    private DetailsLessonRecyclerAdapter adapter;
-    private RecyclerView recyclerView;
-    private LinearLayout linearLayout;
+    private DetailsLessonRecyclerAdapter detailsLessonRecyclerAdapter;
+    private GrammarReferenceRecyclerAdapter grammarReferenceRecyclerAdapter;
+    private RecyclerView listDetailsLesson;
+    private RecyclerView listGrammarReference;
     private int idLesson;
 
     public void setIdLesson(int idLesson) {
@@ -53,11 +53,14 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
             PresenterInterface presenter = new PresenterImpl(model);
             presenter.loadDetailsLesson(this, idLesson);
 
-            recyclerView = (RecyclerView) view.findViewById(R.id.listDetailsLesson);
-            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(adapter);
-            linearLayout = (LinearLayout) view.findViewById(R.id.grammarRef);
+            listDetailsLesson = (RecyclerView) view.findViewById(R.id.listDetailsLesson);
+            listDetailsLesson.setLayoutManager(new LinearLayoutManager(view.getContext()));
+            listDetailsLesson.setHasFixedSize(true);
+            listDetailsLesson.setAdapter(detailsLessonRecyclerAdapter);
+            listGrammarReference = (RecyclerView) view.findViewById(R.id.grammarRefList);
+            listGrammarReference.setLayoutManager(new LinearLayoutManager(view.getContext()));
+            listGrammarReference.setHasFixedSize(true);
+            listGrammarReference.setAdapter(grammarReferenceRecyclerAdapter);
         }
     }
 
@@ -68,7 +71,8 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
 
     @Override
     public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
-        adapter = new DetailsLessonRecyclerAdapter(detailsLessonsExamples);
+        detailsLessonRecyclerAdapter = new DetailsLessonRecyclerAdapter(detailsLessonsExamples);
+        grammarReferenceRecyclerAdapter = new GrammarReferenceRecyclerAdapter(getContext());
     }
 
     @Override

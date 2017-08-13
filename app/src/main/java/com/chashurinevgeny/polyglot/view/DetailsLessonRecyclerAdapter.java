@@ -19,7 +19,7 @@ class DetailsLessonRecyclerAdapter extends RecyclerView.Adapter<DetailsLessonRec
 
     private final List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples;
 
-    public DetailsLessonRecyclerAdapter(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
+    DetailsLessonRecyclerAdapter(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
         this.detailsLessonsExamples = detailsLessonsExamples;
     }
 

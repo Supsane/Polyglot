@@ -18,7 +18,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nameLesson"
+            android:id="@+id/nameGramRef"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingEnd="@dimen/example_lesson_name_desc_end"
@@ -29,7 +29,7 @@
             android:textSize="@dimen/name_lesson_size"/>
 
         <TextView
-            android:id="@+id/descriptionLesson"
+            android:id="@+id/descriptionGramRef"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/example_lesson_top_padding"
