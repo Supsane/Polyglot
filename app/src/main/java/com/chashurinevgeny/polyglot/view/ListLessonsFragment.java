@@ -33,7 +33,7 @@ public class ListLessonsFragment extends Fragment implements ViewInterface {
     }
 
     interface ListLessonListener {
-        void itemClicked(int id);
+        void listLessonItemClicked(int id);
     }
 
     private ListLessonListener listLessonListener;
@@ -63,7 +63,7 @@ public class ListLessonsFragment extends Fragment implements ViewInterface {
                         @Override
                         public void onItemClick(View view, int position) {
                             if (listLessonListener != null) {
-                                listLessonListener.itemClicked(position);
+                                listLessonListener.listLessonItemClicked(position);
                             }
                         }
 

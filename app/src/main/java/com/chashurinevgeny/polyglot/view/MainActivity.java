@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    public void itemClicked(int id) {
+    public void listLessonItemClicked(int id) {
         inflateFragments(id);
         idLesson = id;
     }
