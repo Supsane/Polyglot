@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.chashurinevgeny.polyglot.R;
 import com.chashurinevgeny.polyglot.model.DetailsLesson;
@@ -27,6 +28,7 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
     private final String IDLESSON = "idLesson";
     private DetailsLessonRecyclerAdapter adapter;
     private RecyclerView recyclerView;
+    private LinearLayout linearLayout;
     private int idLesson;
 
     public void setIdLesson(int idLesson) {
@@ -55,6 +57,7 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
             recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(adapter);
+            linearLayout = (LinearLayout) view.findViewById(R.id.grammarRef);
         }
     }
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingEnd="@dimen/example_lesson_padding_end"
+              android:paddingStart="@dimen/example_lesson_padding_start">
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:src="@drawable/book_open_page_variant_24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/example_lesson_name_desc_end"
+            android:paddingStart="@dimen/example_lesson_name_desc_start"
+            android:paddingTop="@dimen/example_lesson_top_padding"
+            android:text="@string/summary"
+            android:textColor="@color/textListColor"
+            android:textSize="@dimen/name_lesson_size"/>
+
+        <TextView
+            android:id="@+id/descriptionLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/example_lesson_top_padding"
+            android:paddingEnd="@dimen/example_lesson_name_desc_end"
+            android:paddingStart="@dimen/example_lesson_name_desc_start"
+            android:text="@string/grammar_ref"
+            android:textColor="@color/textListColor"
+            android:textSize="@dimen/desc_lesson_size"/>
+
+    </LinearLayout>
+
+</LinearLayout>
