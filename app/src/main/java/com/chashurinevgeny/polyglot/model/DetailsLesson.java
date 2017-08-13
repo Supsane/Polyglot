@@ -65,6 +65,33 @@ public class DetailsLesson {
                 detailsLessonsExampleList.add(new DetailsLessonsExample("8. Тренировка местоимений","Притяжательные местоимения"));
                 return detailsLessonsExampleList;
             }
+            case 3: {
+                detailsLessonsExampleList = new ArrayList<>();
+                detailsLessonsExampleList.add(new DetailsLessonsExample("1. Слова урока", "Знакомимся со словами"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("2. Рассказ о себе","Чем я занимаюсь"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("3. Этикет","Приветствие и прощание"));
+                return detailsLessonsExampleList;
+            }
+            case 4: {
+                detailsLessonsExampleList = new ArrayList<>();
+                detailsLessonsExampleList.add(new DetailsLessonsExample("1. Повтор пройденного", "Тренируем глаголы"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("2. Прилагательные","Знакомимся с прилагательными"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("3. Степени сравнения","Знакомимся со словами"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("4. Тренировка","Тренируем степени сравнения"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("5. Параметры времени","Запоминаем"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("6. Параметры времени","Тренировка предложений"));
+                return detailsLessonsExampleList;
+            }
+            case 5: {
+                detailsLessonsExampleList = new ArrayList<>();
+                detailsLessonsExampleList.add(new DetailsLessonsExample("1. Новые глаголы", "Тренируемы новые глаголы"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("2. Much/many","Знакомимся с much/many"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("3. Тренируем much/many","Тренировка в предложениях"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("4. Неопределенные слова","Знакомимся"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("5. Неопределенные слова","Тренировка в предложениях"));
+                detailsLessonsExampleList.add(new DetailsLessonsExample("6. Параметры времени","Частотные параметры"));
+                return detailsLessonsExampleList;
+            }
             default: return detailsLessonsExampleList = new ArrayList<>();
         }
     }

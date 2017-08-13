@@ -1,13 +1,82 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.chashurinevgeny.polyglot.view.ListLessonsFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.chashurinevgeny.polyglot.view.ListLessonsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/textBackground"
+        android:paddingBottom="@dimen/grammar_ref_top_bottom_padding"
+        android:paddingEnd="@dimen/example_lesson_top_padding"
+        android:paddingStart="@dimen/example_lesson_top_padding"
+        android:paddingTop="@dimen/grammar_ref_top_bottom_padding"
+        android:text="@string/grammar_ref"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/grammar_ref_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/example_lesson_padding_start"
+        android:paddingEnd="@dimen/example_lesson_padding_end">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/book_open_page_variant_24dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/example_lesson_name_desc_end"
+                android:paddingStart="@dimen/example_lesson_name_desc_start"
+                android:paddingTop="@dimen/example_lesson_top_padding"
+                android:textSize="@dimen/name_lesson_size"
+                android:textColor="@color/textListColor"
+                android:text="@string/summary"/>
+
+            <TextView
+                android:id="@+id/descriptionLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/example_lesson_top_padding"
+                android:paddingEnd="@dimen/example_lesson_name_desc_end"
+                android:paddingStart="@dimen/example_lesson_name_desc_start"
+                android:textSize="@dimen/desc_lesson_size"
+                android:textColor="@color/textListColor"
+                android:text="@string/grammar_ref"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/textBackground"
+        android:paddingBottom="@dimen/grammar_ref_top_bottom_padding"
+        android:paddingEnd="@dimen/example_lesson_top_padding"
+        android:paddingStart="@dimen/example_lesson_top_padding"
+        android:paddingTop="@dimen/grammar_ref_top_bottom_padding"
+        android:text="@string/training"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/grammar_ref_size"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listDetailsLesson"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scrollbars="vertical"/>
 
-</FrameLayout>
+</LinearLayout>
