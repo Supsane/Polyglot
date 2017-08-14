@@ -15,7 +15,7 @@ import android.view.View;
 import com.chashurinevgeny.polyglot.R;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener, DetailsLessonFragment.DetailsLessonListener {
 
     private static final String IDLESSON = "idLesson";
     private static final String CALLINFLATEFRAGMENTS = "callInflateFragments";
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState != null && isCallInflateFragments) {
             idLesson = savedInstanceState.getInt(IDLESSON);
             loadFragment();
-            inflateFragments(idLesson);
+            inflateFragmentsIfListLessonsItemClicked(idLesson);
         } else {
             loadFragment();
         }
@@ -119,11 +119,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void listLessonItemClicked(int id) {
-        inflateFragments(id);
+        inflateFragmentsIfListLessonsItemClicked(id);
         idLesson = id;
     }
 
-    private void inflateFragments(int id) {
+    private void inflateFragmentsIfListLessonsItemClicked(int id) {
         View listDetailsLessonContainer = findViewById(R.id.listDetailsLessonContainer);
         DetailsLessonFragment detailsLessonFragment = new DetailsLessonFragment();
         detailsLessonFragment.setIdLesson(id);
@@ -147,5 +147,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(IDLESSON, idLesson);
         outState.putBoolean(CALLINFLATEFRAGMENTS, isCallInflateFragments);
+    }
+
+    @Override
+    public void detailsLessonItemClicked(int id) {
+
+    }
+
+    @Override
+    public void grammarReferenceItemClicked(int idLesson) {
+        View listDetailsLessonContainer = findViewById(R.id.listDetailsLessonContainer);
+        GrammarReferenceFragment grammarReferenceFragment = new GrammarReferenceFragment();
+        if (listDetailsLessonContainer != null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.listDetailsLessonContainer, grammarReferenceFragment);
+            transaction.addToBackStack(null);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.commit();
+        } else {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.listLessonsContainer, grammarReferenceFragment);
+            transaction.addToBackStack(null);
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            transaction.commit();
+        }
     }
 }

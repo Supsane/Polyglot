@@ -26,7 +26,7 @@ import java.util.List;
 public class ListLessonsFragment extends Fragment implements ViewInterface {
 
     private ListLessonsRecyclerAdapter adapter;
-    private RecyclerView recyclerView;
+    private RecyclerView listLessons;
 
     public ListLessonsFragment() {
         // Required empty public constructor
@@ -54,12 +54,12 @@ public class ListLessonsFragment extends Fragment implements ViewInterface {
             PresenterInterface presenter = new PresenterImpl(model);
             presenter.loadListLessons(this);
 
-            recyclerView = (RecyclerView) view.findViewById(R.id.listLessons);
-            recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(adapter);
-            recyclerView.addOnItemTouchListener(
-                    new RecyclerItemClickListener(view.getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+            listLessons = (RecyclerView) view.findViewById(R.id.listLessons);
+            listLessons.setLayoutManager(new LinearLayoutManager(view.getContext()));
+            listLessons.setHasFixedSize(true);
+            listLessons.setAdapter(adapter);
+            listLessons.addOnItemTouchListener(
+                    new RecyclerItemClickListener(view.getContext(), listLessons, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
                             if (listLessonListener != null) {

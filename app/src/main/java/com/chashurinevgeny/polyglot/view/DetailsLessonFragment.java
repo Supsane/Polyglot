@@ -1,10 +1,12 @@
 package com.chashurinevgeny.polyglot.view;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +37,14 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
         this.idLesson = idLesson;
     }
 
+    interface DetailsLessonListener {
+        void detailsLessonItemClicked(int id);
+
+        void grammarReferenceItemClicked(int idLesson);
+    }
+
+    private DetailsLessonListener detailsLessonListener;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -57,11 +67,47 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
             listDetailsLesson.setLayoutManager(new LinearLayoutManager(view.getContext()));
             listDetailsLesson.setHasFixedSize(true);
             listDetailsLesson.setAdapter(detailsLessonRecyclerAdapter);
+            listDetailsLesson.addOnItemTouchListener(
+                    new RecyclerItemClickListener(view.getContext(), listDetailsLesson, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            if (detailsLessonListener != null) {
+                                detailsLessonListener.detailsLessonItemClicked(position);
+                            }
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+
+                        }
+                    })
+            );
             listGrammarReference = (RecyclerView) view.findViewById(R.id.grammarRefList);
             listGrammarReference.setLayoutManager(new LinearLayoutManager(view.getContext()));
             listGrammarReference.setHasFixedSize(true);
             listGrammarReference.setAdapter(grammarReferenceRecyclerAdapter);
+            listGrammarReference.addOnItemTouchListener(
+                    new RecyclerItemClickListener(view.getContext(), listGrammarReference, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            if (detailsLessonListener != null) {
+                                detailsLessonListener.grammarReferenceItemClicked(idLesson);
+                            }
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+
+                        }
+                    })
+            );
         }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        detailsLessonListener = (DetailsLessonListener) context;
     }
 
     @Override
