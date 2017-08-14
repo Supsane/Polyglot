@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,10 +23,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DetailsLessonFragment extends Fragment implements ViewInterface {
+public class ListDetailsLessonFragment extends Fragment implements ViewInterface {
 
     private final String IDLESSON = "idLesson";
-    private DetailsLessonRecyclerAdapter detailsLessonRecyclerAdapter;
+    private ListDetailsLessonRecyclerAdapter listDetailsLessonRecyclerAdapter;
     private GrammarReferenceRecyclerAdapter grammarReferenceRecyclerAdapter;
     private RecyclerView listDetailsLesson;
     private RecyclerView listGrammarReference;
@@ -66,7 +65,7 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
             listDetailsLesson = (RecyclerView) view.findViewById(R.id.listDetailsLesson);
             listDetailsLesson.setLayoutManager(new LinearLayoutManager(view.getContext()));
             listDetailsLesson.setHasFixedSize(true);
-            listDetailsLesson.setAdapter(detailsLessonRecyclerAdapter);
+            listDetailsLesson.setAdapter(listDetailsLessonRecyclerAdapter);
             listDetailsLesson.addOnItemTouchListener(
                     new RecyclerItemClickListener(view.getContext(), listDetailsLesson, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
@@ -117,7 +116,7 @@ public class DetailsLessonFragment extends Fragment implements ViewInterface {
 
     @Override
     public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
-        detailsLessonRecyclerAdapter = new DetailsLessonRecyclerAdapter(detailsLessonsExamples);
+        listDetailsLessonRecyclerAdapter = new ListDetailsLessonRecyclerAdapter(detailsLessonsExamples);
         grammarReferenceRecyclerAdapter = new GrammarReferenceRecyclerAdapter(getContext());
     }
 

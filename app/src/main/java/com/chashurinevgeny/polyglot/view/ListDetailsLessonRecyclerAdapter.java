@@ -15,11 +15,11 @@ import java.util.List;
  * Created by Chashurin Evgeny on 27.07.2017.
  */
 
-class DetailsLessonRecyclerAdapter extends RecyclerView.Adapter<DetailsLessonRecyclerAdapter.DetailsHolder> {
+class ListDetailsLessonRecyclerAdapter extends RecyclerView.Adapter<ListDetailsLessonRecyclerAdapter.DetailsHolder> {
 
     private final List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples;
 
-    DetailsLessonRecyclerAdapter(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
+    ListDetailsLessonRecyclerAdapter(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
         this.detailsLessonsExamples = detailsLessonsExamples;
     }
 

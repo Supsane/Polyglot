@@ -15,7 +15,7 @@ import android.view.View;
 import com.chashurinevgeny.polyglot.R;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener, DetailsLessonFragment.DetailsLessonListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener, ListDetailsLessonFragment.DetailsLessonListener {
 
     private static final String IDLESSON = "idLesson";
     private static final String CALLINFLATEFRAGMENTS = "callInflateFragments";
@@ -125,17 +125,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void inflateFragmentsIfListLessonsItemClicked(int id) {
         View listDetailsLessonContainer = findViewById(R.id.listDetailsLessonContainer);
-        DetailsLessonFragment detailsLessonFragment = new DetailsLessonFragment();
-        detailsLessonFragment.setIdLesson(id);
+        ListDetailsLessonFragment listDetailsLessonFragment = new ListDetailsLessonFragment();
+        listDetailsLessonFragment.setIdLesson(id);
         if (listDetailsLessonContainer != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.listDetailsLessonContainer, detailsLessonFragment);
+            transaction.replace(R.id.listDetailsLessonContainer, listDetailsLessonFragment);
             transaction.addToBackStack(null);
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             transaction.commit();
         } else {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.listLessonsContainer, detailsLessonFragment);
+            transaction.replace(R.id.listLessonsContainer, listDetailsLessonFragment);
             transaction.addToBackStack(null);
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             transaction.commit();
