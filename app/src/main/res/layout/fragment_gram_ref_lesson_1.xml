@@ -306,62 +306,90 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Will"
-                            tools:text="Will"/>
+                            android:text="ВОПРОС"
+                            android:textStyle="bold"
+                            tools:text="ВОПРОС"/>
 
                         <LinearLayout
-                            android:orientation="vertical"
+                            android:orientation="horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:id="@+id/i"
+                                android:layout_width="30dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Will"
+                                tools:text="Will"/>
+
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="I"
-                                tools:text="I"/>
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/i"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="I"
+                                    tools:text="I"/>
+
+                                <TextView
+                                    android:id="@+id/you"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="You"
+                                    tools:text="You"/>
+
+                                <TextView
+                                    android:id="@+id/we"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="We"
+                                    tools:text="We"/>
+
+                                <TextView
+                                    android:id="@+id/they"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="They"
+                                    tools:text="They"/>
+
+                                <TextView
+                                    android:id="@+id/he"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="He"
+                                    tools:text="He"/>
+
+                                <TextView
+                                    android:id="@+id/she"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="She"
+                                    tools:text="She"/>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="112dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/separador_peu"/>
 
                             <TextView
-                                android:id="@+id/you"
+                                android:layout_gravity="center_vertical"
+                                android:id="@+id/know"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="You"
-                                tools:text="You"/>
-
-                            <TextView
-                                android:id="@+id/we"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="We"
-                                tools:text="We"/>
-
-                            <TextView
-                                android:id="@+id/they"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="They"
-                                tools:text="They"/>
-
-                            <TextView
-                                android:id="@+id/he"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="He"
-                                tools:text="He"/>
-
-                            <TextView
-                                android:id="@+id/she"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="She"
-                                tools:text="She"/>
-
+                                android:text="Know?"
+                                tools:text="Know?"/>
                         </LinearLayout>
                     </LinearLayout>
                 </TableRow>
