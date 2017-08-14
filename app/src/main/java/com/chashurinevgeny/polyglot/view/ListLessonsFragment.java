@@ -88,7 +88,7 @@ public class ListLessonsFragment extends Fragment implements ViewInterface {
     }
 
     @Override
-    public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
+    public void displayListDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
 
     }
 }

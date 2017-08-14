@@ -17,4 +17,37 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="textTitleReference">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textListColor</item>
+        <item name="android:paddingBottom">@dimen/grammar_ref_top_bottom_padding</item>
+        <item name="android:paddingTop">@dimen/grammar_ref_top_bottom_padding</item>
+    </style>
+
+    <style name="textTitleVerbList">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textListColor</item>
+        <item name="android:paddingBottom">@dimen/grammar_ref_top_bottom_padding</item>
+        <item name="android:paddingTop">@dimen/grammar_ref_top_bottom_padding</item>
+    </style>
+
+    <style name="textVerbList">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textListColor</item>
+        <item name="android:paddingBottom">@dimen/grammar_ref_top_bottom_padding</item>
+        <item name="android:paddingTop">@dimen/grammar_ref_top_bottom_padding</item>
+    </style>
+
+    <style name="textDescReference">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/textListColor</item>
+        <item name="android:paddingStart">@dimen/grammar_ref_desc_padding</item>
+        <item name="android:paddingEnd">@dimen/grammar_ref_desc_padding</item>
+        <item name="android:paddingBottom">@dimen/grammar_ref_top_bottom_padding</item>
+        <item name="android:paddingTop">@dimen/grammar_ref_top_bottom_padding</item>
+    </style>
+
 </resources>

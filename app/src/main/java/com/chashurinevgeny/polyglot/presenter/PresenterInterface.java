@@ -8,5 +8,5 @@ import com.chashurinevgeny.polyglot.view.ViewInterface;
 
 public interface PresenterInterface {
     void loadListLessons(ViewInterface viewInterface);
-    void loadDetailsLesson(ViewInterface viewInterface, int idLesson);
+    void loadListDetailsLesson(ViewInterface viewInterface, int idLesson);
 }

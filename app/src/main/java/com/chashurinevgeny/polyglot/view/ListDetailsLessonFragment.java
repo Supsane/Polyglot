@@ -60,7 +60,7 @@ public class ListDetailsLessonFragment extends Fragment implements ViewInterface
         if (view != null) {
             ModelInterface model = new ModelImpl();
             PresenterInterface presenter = new PresenterImpl(model);
-            presenter.loadDetailsLesson(this, idLesson);
+            presenter.loadListDetailsLesson(this, idLesson);
 
             listDetailsLesson = (RecyclerView) view.findViewById(R.id.listDetailsLesson);
             listDetailsLesson.setLayoutManager(new LinearLayoutManager(view.getContext()));
@@ -115,7 +115,7 @@ public class ListDetailsLessonFragment extends Fragment implements ViewInterface
     }
 
     @Override
-    public void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
+    public void displayListDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples) {
         listDetailsLessonRecyclerAdapter = new ListDetailsLessonRecyclerAdapter(detailsLessonsExamples);
         grammarReferenceRecyclerAdapter = new GrammarReferenceRecyclerAdapter(getContext());
     }

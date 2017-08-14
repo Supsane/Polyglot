@@ -1,0 +1,321 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.GrammarReferenceFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleReference"
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Базовые формы глагола"
+                tools:text="Базовые формы глагола" />
+
+            <TextView
+                android:id="@+id/descReference"
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="На первом занятии мы поговорим о базовых формах глагола. Ведь глагол - это основа языка. Форма глагола зависит от времени (настоящее, прошедшее, будущее), а также от формы высказывания - утверждение, отрицание, вопрос."
+                tools:text="На первом занятии мы поговорим о базовых формах глагола. Ведь глагол - это основа языка. Форма глагола зависит от времени (настоящее, прошедшее, будущее), а также от формы высказывания - утверждение, отрицание, вопрос." />
+
+            <TextView
+                android:id="@+id/usedVerbsTitle"
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Список используемых глаголов"
+                tools:text="Список используемых глаголов" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/textTitleVerbList"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:text="Глагол"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/textTitleVerbList"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="2-я форма"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/textTitleVerbList"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="Перевод"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/textVerbList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Love" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/textVerbList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Любить" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/textVerbList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Live" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Жить" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Work" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Работать" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Open" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Открыть" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Close" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Закрыть" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="See" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Saw)" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Видеть" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Come" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Came)" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Приходить" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Go" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Went)" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Идти" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Know" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Knew)" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Знать" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Think" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(Thought)" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Думать" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Начать" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Finish" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:text="Закончить" />
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/descReference2"
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вторая форма глагола применяется только в утвердительной форме в прошедшем времени."
+                tools:text="Вторая форма глагола применяется только в утвердительной форме в прошедшем времени." />
+
+            <TextView
+                android:id="@+id/titleTableVerb"
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Таблица базовых форм глагола"
+                tools:text="Таблица базовых форм глагола" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </TableLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

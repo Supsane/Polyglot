@@ -13,4 +13,5 @@
     <dimen name="example_lesson_name_desc_end">1dp</dimen>
     <dimen name="grammar_ref_size">16sp</dimen>
     <dimen name="grammar_ref_top_bottom_padding">2dp</dimen>
+    <dimen name="grammar_ref_desc_padding">8dp</dimen>
 </resources>

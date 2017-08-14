@@ -11,5 +11,5 @@ import java.util.List;
 
 public interface ViewInterface {
     void displayListLessons(List<Lessons.LessonExample> lessonExample);
-    void displayDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples);
+    void displayListDetailsLesson(List<DetailsLesson.DetailsLessonsExample> detailsLessonsExamples);
 }
