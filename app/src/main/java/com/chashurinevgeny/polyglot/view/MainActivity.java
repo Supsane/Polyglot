@@ -1,5 +1,6 @@
 package com.chashurinevgeny.polyglot.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -158,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void grammarReferenceItemClicked(int idLesson) {
         View listDetailsLessonContainer = findViewById(R.id.listDetailsLessonContainer);
         GrammarReferenceFragment grammarReferenceFragment = new GrammarReferenceFragment();
+        grammarReferenceFragment.setIdLesson(idLesson);
         if (listDetailsLessonContainer != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.listDetailsLessonContainer, grammarReferenceFragment);

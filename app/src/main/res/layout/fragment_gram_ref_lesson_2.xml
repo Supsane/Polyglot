@@ -19,8 +19,8 @@
                 style="@style/textTitleReference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Конспект к уроку №1"
-                tools:text="Конспект к уроку №1" />
+                android:text="Конспект к уроку №2"
+                tools:text="Конспект к уроку №2" />
 
             <TextView
                 android:id="@+id/descReference"

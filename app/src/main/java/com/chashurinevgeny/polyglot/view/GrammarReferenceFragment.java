@@ -14,17 +14,30 @@ import com.chashurinevgeny.polyglot.R;
  */
 public class GrammarReferenceFragment extends Fragment {
 
+    private int idLesson;
 
-    public GrammarReferenceFragment() {
-        // Required empty public constructor
+    public void setIdLesson(int idLesson) {
+        this.idLesson = idLesson;
     }
 
+    public GrammarReferenceFragment() {
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gram_ref_lesson_1, container, false);
+
+        switch (idLesson) {
+            case 0: {
+                return inflater.inflate(R.layout.fragment_gram_ref_lesson_1, container, false);
+            }
+            case 1: {
+                return inflater.inflate(R.layout.fragment_gram_ref_lesson_2, container, false);
+            }
+            default: return inflater.inflate(R.layout.fragment_gram_ref_lesson_1, container, false);
+        }
     }
 
 }
