@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.GrammarReferenceFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleReference"
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Конспект к уроку №4"
+                tools:text="Конспект к уроку №4" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="В этом уроке мы научимся рассказывать о себе. Необходимая для этого информация приведена ниже."
+                tools:text="В этом уроке мы научимся рассказывать о себе. Необходимая для этого информация приведена ниже." />
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Слова и предложения"
+                tools:text="Слова и предложения" />
+
+            <ImageView
+                android:layout_width="334dp"
+                android:layout_height="270dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/ups"
+                android:src="@drawable/word_lesson_4" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

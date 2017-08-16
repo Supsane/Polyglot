@@ -39,8 +39,11 @@ public class GrammarReferenceFragment extends Fragment {
             case 2: {
                 return inflater.inflate(R.layout.fragment_gram_ref_lesson_3, container, false);
             }
-            default: return inflater.inflate(R.layout.fragment_gram_ref_lesson_1, container, false);
+            case 3: {
+                return inflater.inflate(R.layout.fragment_gram_ref_lesson_4, container, false);
+            }
+            default:
+                return inflater.inflate(R.layout.fragment_gram_ref_lesson_1, container, false);
         }
     }
-
 }
