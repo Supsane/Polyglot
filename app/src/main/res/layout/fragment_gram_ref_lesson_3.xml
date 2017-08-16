@@ -1,0 +1,228 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.GrammarReferenceFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleReference"
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Конспект к уроку №3"
+                tools:text="Конспект к уроку №3" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="На первом уроке была рассмотрена базовая форма глагола. Этой форме подчиняются все глаголы кроме глагола to be. \nГлагол to be употребляется в значениях быть где-то или являться кем-то."
+                tools:text="На первом уроке была рассмотрена базовая форма глагола. Этой форме подчиняются все глаголы кроме глагола to be. \nГлагол to be употребляется в значениях быть где-то или являться кем-то." />
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Формы глагола to be"
+                tools:text="Формы глагола to be" />
+
+            <ImageView
+                android:layout_width="334dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/ups"
+                android:src="@drawable/table_to_be" />
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Действие в процессе"
+                tools:text="Действие в процессе" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Если к схеме глагола to be добавить глагол с окончанием -ing то мы получим действие в состоянии процесса."
+                tools:text="Если к схеме глагола to be добавить глагол с окончанием -ing то мы получим действие в состоянии процесса." />
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Притяжательная форма местоимений"
+                tools:text="Притяжательная форма местоимений" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="К пройденным на втором занятии формам местоимений теперь добавим притяжательную форму. Такая форма отвечает на вопрос Чьё? Чей?"
+                tools:text="К пройденным на втором занятии формам местоимений теперь добавим притяжательную форму. Такая форма отвечает на вопрос Чьё? Чей?" />
+
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="3"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/textTitleVerbList"
+                    android:layout_width="98dp"
+                    android:layout_height="wrap_content"
+                    android:text="Кто?"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textTitleVerbList"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Кому? Кого?"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textTitleVerbList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Чьё? Чей?"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I - Я" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Me - Меня, мне" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My - Моё, мой" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You - Вы, ты" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You - Вас, вам" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your - Твоё, твой" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="He - Он" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Him - Его, ему" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="His - Его" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="She - Она" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Her - Её, ей" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Her - Её" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We - Мы" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Us - Нас, нам" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Our - Наше, наш" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="They - Они" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Them - Им" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Their - Их" />
+            </GridLayout>
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Неопределенная форма глагола"
+                tools:text="Неопределенная форма глагола" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Неопределенная форма глагола сопровождается частицей to. Как правило, эта форма следует за глаголом, который ею управляет. Например: I like to dance - Я люблю танцевать. I want to be your friend - Я хочу быть твоим другом."
+                tools:text="Неопределенная форма глагола сопровождается частицей to. Как правило, эта форма следует за глаголом, который ею управляет. Например: I like to dance - Я люблю танцевать. I want to be your friend - Я хочу быть твоим другом." />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
