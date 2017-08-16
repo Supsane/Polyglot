@@ -210,30 +210,148 @@
             </GridLayout>
 
             <TextView
-                android:id="@+id/titleTableVerb"
                 style="@style/textTitleReference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Местоимения"
                 tools:text="Местоимения" />
 
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:columnCount="2"
+                android:orientation="horizontal">
 
+                <TextView
+                    style="@style/textTitleVerbList"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Кто?"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textTitleVerbList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Кого?"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I - Я" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Me - Меня, мне" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You - Вы, ты" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You - Вас, вам" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="He - Он" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Him - Его, ему" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="She - Она" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Her - Её, ей" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We - Мы" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Us - Нас, нам" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="They - Они" />
+
+                <TextView
+                    style="@style/textVerbList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Them - Им" />
+            </GridLayout>
 
             <TextView
-                android:id="@+id/exampleTitleLesson1"
                 style="@style/textTitleReference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Примеры"
-                tools:text="Примеры" />
+                android:text="Вопросительные слова"
+                tools:text="Вопросительные слова" />
 
             <TextView
-                android:id="@+id/exampleLesson1"
                 style="@style/textDescReference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I will go - Я пойду. \nYou came - Вы пришли \nShe did not know - Она не знала. \nDoes he see? - Он видел?"
-                tools:text="I will go - Я пойду. \nYou came - Вы пришли \nShe did not know - Она не знала. \nDoes he see? - Он видел?" />
+                android:text="What - Что? Какой?\nWho - Кто?\nWhere - Где? Куда\nWhen - Когда?\nWhy - Почему? Зачем? Для Чего? \nHow - Как?"
+                tools:text="What - Что? Какой?\nWho - Кто?\nWhere - Где? Куда\nWhen - Когда?\nWhy - Почему? Зачем? Для Чего? \nHow - Как?" />
+
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Предлоги"
+                tools:text="Предлоги" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="In - в (внутри)\nTo - к, куда, к чему, к кому \nFrom - откуда, от кого, из чего"
+                tools:text="In - в (внутри)\nTo - к, куда, к чему, к кому \nFrom - откуда, от кого, из чего" />
+
+            <TextView
+                style="@style/textTitleReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Слова - паразиты"
+                tools:text="Слова - паразиты" />
+
+            <TextView
+                style="@style/textDescReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Well - Ну \nYou know - Вы знаете\nI mean - Я имею ввиду\nLike - Как, как бы\nSort of - Типа того"
+                tools:text="Well - Ну \nYou know - Вы знаете\nI mean - Я имею ввиду\nLike - Как, как бы\nSort of - Типа того" />
 
         </LinearLayout>
     </ScrollView>
