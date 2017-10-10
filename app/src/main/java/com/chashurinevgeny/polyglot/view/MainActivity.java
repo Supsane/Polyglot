@@ -1,6 +1,5 @@
 package com.chashurinevgeny.polyglot.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -14,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.chashurinevgeny.polyglot.R;
+import com.chashurinevgeny.polyglot.view.fragments.GrammarReferenceFragment;
+import com.chashurinevgeny.polyglot.view.fragments.ListDetailsLessonFragment;
+import com.chashurinevgeny.polyglot.view.fragments.ListLessonsFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ListLessonsFragment.ListLessonListener, ListDetailsLessonFragment.DetailsLessonListener {

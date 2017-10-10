@@ -1,4 +1,4 @@
-package com.chashurinevgeny.polyglot.view;
+package com.chashurinevgeny.polyglot.view.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -16,11 +16,11 @@ import java.util.List;
  * Created by Chashurin Evgeny on 13.08.2017.
  */
 
-class GrammarReferenceRecyclerAdapter extends RecyclerView.Adapter<GrammarReferenceRecyclerAdapter.GrammarRefHolder> {
+public class GrammarReferenceRecyclerAdapter extends RecyclerView.Adapter<GrammarReferenceRecyclerAdapter.GrammarRefHolder> {
 
     private final List<GrammarReference.GrammarReferenceExample> grammarReferenceExamples;
 
-    GrammarReferenceRecyclerAdapter(Context context) {
+    public GrammarReferenceRecyclerAdapter(Context context) {
         GrammarReference grammarReference = new GrammarReference(context);
         grammarReferenceExamples = grammarReference.getGrammarReferenceExampleList(context);
     }

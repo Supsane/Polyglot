@@ -1,4 +1,4 @@
-package com.chashurinevgeny.polyglot.view;
+package com.chashurinevgeny.polyglot.view.fragments;
 
 
 import android.os.Bundle;

@@ -10,11 +10,11 @@ import android.view.View;
  * Created by Chashurin Evgeny on 06.08.2017.
  */
 
-class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
+public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
 
     private OnItemClickListener onItemClickListener;
 
-    interface OnItemClickListener {
+    public interface OnItemClickListener {
         void onItemClick(View view, int position);
 
         void onLongItemClick(View view, int position);
@@ -22,7 +22,7 @@ class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
 
     private GestureDetector gestureDetector;
 
-    RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
+    public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
         onItemClickListener = listener;
         gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override

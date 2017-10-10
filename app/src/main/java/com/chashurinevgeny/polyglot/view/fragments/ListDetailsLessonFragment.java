@@ -1,4 +1,4 @@
-package com.chashurinevgeny.polyglot.view;
+package com.chashurinevgeny.polyglot.view.fragments;
 
 
 import android.content.Context;
@@ -17,6 +17,9 @@ import com.chashurinevgeny.polyglot.model.ModelImpl;
 import com.chashurinevgeny.polyglot.model.ModelInterface;
 import com.chashurinevgeny.polyglot.presenter.PresenterImpl;
 import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
+import com.chashurinevgeny.polyglot.view.adapters.*;
+import com.chashurinevgeny.polyglot.view.RecyclerItemClickListener;
+import com.chashurinevgeny.polyglot.view.ViewInterface;
 
 import java.util.List;
 
@@ -36,7 +39,7 @@ public class ListDetailsLessonFragment extends Fragment implements ViewInterface
         this.idLesson = idLesson;
     }
 
-    interface DetailsLessonListener {
+    public interface DetailsLessonListener {
         void detailsLessonItemClicked(int id);
 
         void grammarReferenceItemClicked(int idLesson);

@@ -1,4 +1,4 @@
-package com.chashurinevgeny.polyglot.view;
+package com.chashurinevgeny.polyglot.view.fragments;
 
 
 import android.content.Context;
@@ -17,6 +17,9 @@ import com.chashurinevgeny.polyglot.model.ModelImpl;
 import com.chashurinevgeny.polyglot.model.ModelInterface;
 import com.chashurinevgeny.polyglot.presenter.PresenterImpl;
 import com.chashurinevgeny.polyglot.presenter.PresenterInterface;
+import com.chashurinevgeny.polyglot.view.adapters.ListLessonsRecyclerAdapter;
+import com.chashurinevgeny.polyglot.view.RecyclerItemClickListener;
+import com.chashurinevgeny.polyglot.view.ViewInterface;
 
 import java.util.List;
 
@@ -32,7 +35,7 @@ public class ListLessonsFragment extends Fragment implements ViewInterface {
         // Required empty public constructor
     }
 
-    interface ListLessonListener {
+    public interface ListLessonListener {
         void listLessonItemClicked(int id);
     }
 

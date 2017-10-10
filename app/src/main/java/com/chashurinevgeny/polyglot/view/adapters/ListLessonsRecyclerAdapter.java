@@ -1,4 +1,4 @@
-package com.chashurinevgeny.polyglot.view;
+package com.chashurinevgeny.polyglot.view.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,11 +15,11 @@ import java.util.List;
  * Created by Chashurin Evgeny on 23.07.2017.
  */
 
-class ListLessonsRecyclerAdapter extends RecyclerView.Adapter<ListLessonsRecyclerAdapter.LessonHolder> {
+public class ListLessonsRecyclerAdapter extends RecyclerView.Adapter<ListLessonsRecyclerAdapter.LessonHolder> {
 
     private final List<Lessons.LessonExample> lessonExample;
 
-    ListLessonsRecyclerAdapter(List<Lessons.LessonExample> lessonExample) {
+    public ListLessonsRecyclerAdapter(List<Lessons.LessonExample> lessonExample) {
         this.lessonExample = lessonExample;
     }
 
