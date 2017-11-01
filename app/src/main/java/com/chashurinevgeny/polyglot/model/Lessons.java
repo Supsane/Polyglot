@@ -1,6 +1,14 @@
 package com.chashurinevgeny.polyglot.model;
 
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+
+import com.chashurinevgeny.polyglot.DataBase.DataBaseHelper;
+import com.chashurinevgeny.polyglot.DataBase.PolyglotApp;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -11,6 +19,12 @@ public class Lessons {
 
     private static Lessons lessons;
     private static List<LessonExample> lessonExample;
+
+    private ArrayList<HashMap<String, Object>> listLessons = new ArrayList<>();
+    private HashMap<String, Object> lesson;
+    private PolyglotApp app = new PolyglotApp();
+    private DataBaseHelper dataBaseHelper;
+    private SQLiteDatabase database;
 
     public class LessonExample {
         private String nameLesson;
@@ -31,6 +45,35 @@ public class Lessons {
     }
 
     private Lessons() {
+        dataBaseHelper = app.getDataBaseHelper();
+        try {
+            dataBaseHelper.updateDatabase();
+        } catch (SQLException e) {
+            throw new Error("UnableToUpdateDatabase");
+        }
+
+        try {
+            database = dataBaseHelper.getWritableDatabase();
+        } catch (SQLException e) {
+            throw e;
+        }
+
+        Cursor cursor = database.rawQuery("SELECT * FROM lessons", null);
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()) {
+            lesson = new HashMap<>();
+
+            lesson.put("name", cursor.getString(1));
+            lesson.put("description", cursor.getString(2));
+
+            listLessons.add(lesson);
+
+            cursor.moveToNext();
+        }
+
+        cursor.close();
+
         lessonExample = new ArrayList<>();
         lessonExample.add(new LessonExample("Урок №1", "Базовая таблица глагола. Утверждения, отрицания, вопросы. Личные местоимения"));
         lessonExample.add(new LessonExample("Урок №2", "Как знать тысячи слов. Местоимения, вопросительные слова, предлоги to, in, from"));
@@ -51,7 +94,7 @@ public class Lessons {
     }
 
     static List<LessonExample> getLessonExample() {
-        if(lessons == null) {
+        if (lessons == null) {
             lessons = new Lessons();
         }
         return lessonExample;
